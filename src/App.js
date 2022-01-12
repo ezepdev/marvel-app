@@ -1,11 +1,15 @@
 import './App.css'
-import CharacterCard from 'components/CharacterCard'
+import { Provider } from 'react-redux'
+import CardCharacterContainer from './containers/CardCharacterContainer'
+import store from 'redux/store'
 
 function App() {
     return (
-        <div className="App">
-            <CharacterCard />
-        </div>
+        <Provider store={store}>
+            <div className="app-container">
+                <CardCharacterContainer />
+            </div>
+        </Provider>
     )
 }
 
