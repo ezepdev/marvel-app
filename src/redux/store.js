@@ -1,20 +1,17 @@
 import { createStore, applyMiddleware } from 'redux'
-import reducer from './reducers'
+import reducer from './reducers/character'
 import thunk from 'redux-thunk'
-import { getCharacter } from './actions'
+import { getCharacters } from './actions/character'
 
 const store = createStore(
     reducer,
     {
-        character: {},
-        status: null,
-        error: null,
+        characters: [],
+        status: 'loading',
     },
     applyMiddleware(thunk)
 )
 
-store.dispatch(getCharacter()).then(() => {
-    console.log(store.getState())
-})
+store.dispatch(getCharacters()).then(data => console.log(data))
 
 export default store

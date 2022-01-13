@@ -1,17 +1,17 @@
 const fetchCharacterReducer = (state = {}, action) => {
     switch (action.type) {
-        case 'START_FETCH_CHARACTER':
+        case 'START_FETCH_CHARACTERS':
             return {
                 ...state,
                 status: 'loading',
             }
-        case 'SUCCESS_FETCH_CHARACTER':
+        case 'SUCCESS_FETCH_CHARACTERS':
             return {
                 ...state,
+                characters: action.payload,
                 status: 'success',
-                character: action.payload,
             }
-        case 'ERROR_FETCH_CHARACTER':
+        case 'ERROR_FETCH_CHARACTERS':
             return {
                 ...state,
                 status: 'error',

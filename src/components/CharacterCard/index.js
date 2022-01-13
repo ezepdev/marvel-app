@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
 import './index.css'
 
-const CardLegend = ({ characterName }) => (
+const CardLegend = ({ name, description }) => (
     <>
         <div className="card-detail-container">
-            <h1 className="card-detail-header"> {characterName}</h1>
+            <h1 className="card-detail-header"> {name}</h1>
+            <p className="card-detail-body"> {description}</p>
         </div>
     </>
 )
 
-const CharacterCard = ({ character, isLoading }) => {
+const CharacterCard = ({ character }) => {
     const [hover, setHover] = useState(false)
 
-    return !isLoading ? (
+    return (
         <div
             className="card-container"
             onMouseOver={() => {
@@ -24,12 +25,19 @@ const CharacterCard = ({ character, isLoading }) => {
         >
             <img
                 className="card-image"
-                src={character.thumbnail.path + '.jpg'}
+                src={
+                    character.thumbnail.path +
+                    '.' +
+                    character.thumbnail.extension
+                }
             />
-            {hover && <CardLegend characterName={character.name} />}
+            {hover && (
+                <CardLegend
+                    name={character.name}
+                    description={character.description}
+                />
+            )}
         </div>
-    ) : (
-        'Cargando, por favor espere!!!'
     )
 }
 

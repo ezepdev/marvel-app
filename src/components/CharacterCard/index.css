@@ -1,30 +1,38 @@
 .card-container {
-    width: 20vw;
-    height: 40vh;
-    border-radius: 0.5em;
-    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    height: 20vw;
     position: relative;
     text-align: center;
     font-family: 'Jura', sans-serif;
     line-break: 20px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .card-image {
+    border-radius: 1vw;
     width: 100%;
     height: 100%;
-    object-position: center;
+    object-position: top;
     object-fit: cover;
 }
 
-.card-container:hover > .card-image {
-    transition: all 0.5s ease-in-out;
+.card-container:hover {
+    z-index: 1;
 
-    transform: scale(1.2);
+    height: 400px;
+    transition: all 0.5s ease-in-out;
 }
 
 .card-detail-container {
     position: absolute;
-    font-size: 0.9em;
+    overflow: scroll;
+    border-radius: 1vw;
+
+    scroll-behavior: smooth;
     top: 0;
     left: 0;
     text-align: center;
@@ -37,4 +45,13 @@
     transition: all 0.3s ease-in-out;
     color: white;
     background-color: rgba(22, 29, 36, 0.8);
+}
+
+.card-detail-body {
+    font-size: 1rem;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    width: 80%;
+    text-align: left;
+    margin: 10px auto;
 }
