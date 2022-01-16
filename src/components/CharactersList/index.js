@@ -5,7 +5,7 @@ import './index.css'
 const CharactersList = ({ characters, isLoading }) => {
     console.log(characters)
     return (
-        <div>
+        <>
             {!isLoading && (
                 <ul className="characters-container">
                     {characters.map(character => (
@@ -15,7 +15,7 @@ const CharactersList = ({ characters, isLoading }) => {
                     ))}
                 </ul>
             )}
-        </div>
+        </>
     )
 }
 

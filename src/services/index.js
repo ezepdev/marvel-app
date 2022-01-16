@@ -1,7 +1,8 @@
 import axios from 'axios'
+import config from 'config'
 
-const getCharactersMoreImportants = () => {
-    return getCharacters().then(characters =>
+const getCharactersMoreImportants = offset => {
+    return getCharacters(offset).then(characters =>
         filterByCharactersWithImage(characters)
     )
 }
@@ -12,17 +13,18 @@ const filterByCharactersWithImage = characters => {
     )
 }
 
-const getCharacters = () => {
+const getCharacters = ({ offset = 0, limit = 100 }) => {
     return axios({
         method: 'GET',
-        baseURL: 'https://gateway.marvel.com/',
-        url: `/v1/public/characters`,
+        baseURL: config.baseURL,
+        url: config.url.characters,
         params: {
-            ts: '1',
-            limit: 100,
-            orderBy: 'modified',
-            apikey: '28db5b0966047fd5479e7d68824aec36',
-            hash: '61a55d24492720b1c547e56135c31358',
+            offset,
+            limit,
+            orderBy: '-modified',
+            ts: config.ts,
+            apikey: config.key.apikey,
+            hash: config.key.hash,
         },
     }).then(response => {
         return response.data.data.results
