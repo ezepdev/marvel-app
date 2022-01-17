@@ -1,5 +1,6 @@
 .app-container {
     background-color: hsl(0, 2%, 80%, 80%);
-    height: 100vh;
+    height: calc(max-content + 300px);
     padding: 20px;
+    text-align: center;
 }

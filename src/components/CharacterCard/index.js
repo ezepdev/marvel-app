@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
 import './index.css'
 
 const CardLegend = ({ name, description }) => (
@@ -10,7 +11,7 @@ const CardLegend = ({ name, description }) => (
     </>
 )
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ name, description, imageSrc }) => {
     const [hover, setHover] = useState(false)
 
     return (
@@ -23,20 +24,8 @@ const CharacterCard = ({ character }) => {
                 setHover(false)
             }}
         >
-            <img
-                className="card-image"
-                src={
-                    character.thumbnail.path +
-                    '.' +
-                    character.thumbnail.extension
-                }
-            />
-            {hover && (
-                <CardLegend
-                    name={character.name}
-                    description={character.description}
-                />
-            )}
+            <img className="card-image" src={imageSrc} />
+            {hover && <CardLegend name={name} description={description} />}
         </div>
     )
 }

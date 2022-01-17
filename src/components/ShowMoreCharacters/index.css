@@ -1,0 +1,37 @@
+.show-more-characters-btn {
+    width: 30vw;
+    background: none;
+    cursor: pointer;
+    background-color: rgb(232, 93, 93, 0.8);
+    color: white;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
+        width 0.5s ease-in-out;
+    height: 36px;
+    font-family: Roboto, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.show-more-characters-btn:hover,
+.show-more-characters-btn:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+        0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: rgb(240, 41, 41);
+    color: white;
+    transform: scale(1.1);
+}
+
+.show-more-characters-btn:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background-color: rgb(250, 31, 31);
+}

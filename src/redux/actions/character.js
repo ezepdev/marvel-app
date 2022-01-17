@@ -21,10 +21,11 @@ const successFetchCharacters = characters => {
 }
 
 const getCharacters = () => {
-    return dispatch => {
+    return (dispatch, getState) => {
         dispatch(startFetchCharacters())
-
-        return fetchCharacters()
+        console.log(getState())
+        const { offset } = getState()
+        return fetchCharacters(offset)
             .then(res => dispatch(successFetchCharacters(res)))
             .catch(err => dispatch(failFetchCharacters(err)))
     }

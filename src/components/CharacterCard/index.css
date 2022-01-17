@@ -22,16 +22,14 @@
 
 .card-container:hover {
     z-index: 1;
-
-    height: 400px;
-    transition: all 0.5s ease-in-out;
+    height: 360px;
+    transition: all 0.7s ease-in-out;
 }
 
 .card-detail-container {
     position: absolute;
     overflow: scroll;
     border-radius: 1vw;
-
     scroll-behavior: smooth;
     top: 0;
     left: 0;

@@ -2,7 +2,7 @@ import axios from 'axios'
 import config from 'config'
 
 const getCharactersMoreImportants = offset => {
-    return getCharacters(offset).then(characters =>
+    return getCharacters({ offset }).then(characters =>
         filterByCharactersWithImage(characters)
     )
 }
@@ -13,7 +13,7 @@ const filterByCharactersWithImage = characters => {
     )
 }
 
-const getCharacters = ({ offset = 0, limit = 100 }) => {
+const getCharacters = ({ offset = 0, limit = 50 }) => {
     return axios({
         method: 'GET',
         baseURL: config.baseURL,
@@ -22,9 +22,9 @@ const getCharacters = ({ offset = 0, limit = 100 }) => {
             offset,
             limit,
             orderBy: '-modified',
-            ts: config.ts,
-            apikey: config.key.apikey,
-            hash: config.key.hash,
+            ts: config.keys.ts,
+            apikey: config.keys.apikey,
+            hash: config.keys.hash,
         },
     }).then(response => {
         return response.data.data.results

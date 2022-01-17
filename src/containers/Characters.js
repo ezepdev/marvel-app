@@ -4,7 +4,6 @@ import CharactersList from 'components/CharactersList'
 const mapStateToProps = state => {
     return {
         characters: state.characters,
-        isLoading: state.status == 'loading',
     }
 }
 

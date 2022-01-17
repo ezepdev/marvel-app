@@ -3,7 +3,7 @@ let config = {
     url: {
         characters: `/v1/public/characters`,
     },
-    key: {
+    keys: {
         ts: '1',
         apikey: '28db5b0966047fd5479e7d68824aec36',
         hash: '61a55d24492720b1c547e56135c31358',
