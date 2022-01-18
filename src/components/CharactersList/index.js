@@ -5,8 +5,9 @@ import './index.css'
 const CharactersList = ({ characters, isLoading }) => {
     return (
         <>
-            {isLoading ? 'Cargando' : null}
-            {
+            {isLoading ? (
+                'Cargando'
+            ) : (
                 <ul className="characters-container">
                     {characters.map(({ id, name, description, thumbnail }) => (
                         <li key={id}>
@@ -20,7 +21,7 @@ const CharactersList = ({ characters, isLoading }) => {
                         </li>
                     ))}
                 </ul>
-            }
+            )}
         </>
     )
 }

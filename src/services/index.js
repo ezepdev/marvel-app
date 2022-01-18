@@ -13,6 +13,24 @@ const filterByCharactersWithImage = characters => {
     )
 }
 
+const findByName = name => {
+    return axios({
+        method: 'GET',
+        baseURL: config.baseURL,
+        url: config.url.characters,
+        params: {
+            ts: config.keys.ts,
+            apikey: config.keys.apikey,
+            hash: config.keys.hash,
+            nameStartsWith: name,
+            limit: 100,
+        },
+    }).then(response => {
+        console.log(response)
+        return filterByCharactersWithImage(response.data.data.results)
+    })
+}
+
 const getCharacters = ({ offset = 0, limit = 50 }) => {
     return axios({
         method: 'GET',
@@ -31,4 +49,4 @@ const getCharacters = ({ offset = 0, limit = 50 }) => {
     })
 }
 
-export default getCharactersMoreImportants
+export { findByName, getCharactersMoreImportants }

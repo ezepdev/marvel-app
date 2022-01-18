@@ -1,14 +1,14 @@
-import fetchCharacters from 'services'
+import { findByName, getCharactersMoreImportants } from 'services'
 
-const startFetchCharacters = () => {
+const startFetch = () => {
     return {
-        type: 'START_FETCH_CHARACTERS',
+        type: 'START_FETCH',
     }
 }
 
-const failFetchCharacters = error => {
+const failFetch = error => {
     return {
-        type: 'ERROR_FETCH_CHARACTERS',
+        type: 'ERROR_FETCH',
         error,
     }
 }
@@ -20,15 +20,33 @@ const successFetchCharacters = characters => {
     }
 }
 
-const getCharacters = () => {
-    return (dispatch, getState) => {
-        dispatch(startFetchCharacters())
-        console.log(getState())
-        const { offset } = getState()
-        return fetchCharacters(offset)
-            .then(res => dispatch(successFetchCharacters(res)))
-            .catch(err => dispatch(failFetchCharacters(err)))
+const successFindCharacters = characters => {
+    return {
+        type: 'SUCCESS_FIND_CHARACTERS',
+        payload: characters,
     }
 }
 
-export { getCharacters }
+const getCharacters = () => {
+    return (dispatch, getState) => {
+        dispatch(startFetch())
+        const { offset } = getState()
+        return getCharactersMoreImportants(offset)
+            .then(res => dispatch(successFetchCharacters(res)))
+            .catch(err => dispatch(failFetch(err)))
+    }
+}
+
+const findCharacterByName = name => {
+    return dispatch => {
+        dispatch(startFetch())
+
+        return findByName(name)
+            .then(res => {
+                dispatch(successFindCharacters(res))
+            })
+            .catch(err => dispatch(failFetch(err)))
+    }
+}
+
+export { getCharacters, findCharacterByName }

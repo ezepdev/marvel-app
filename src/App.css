@@ -1,6 +1,7 @@
 .app-container {
     background-color: rgba(232, 223, 223, 0.8);
-    min-height: calc(max-content + 300px);
+    min-height: 100vh;
+    height: min-content;
     padding: 20px;
     text-align: center;
 }

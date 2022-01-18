@@ -1,0 +1,31 @@
+.searcher {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    height: 70%;
+}
+
+.searcher-button {
+    background: none;
+    height: 100%;
+    border: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    color: white;
+    overflow: none;
+}
+
+.searcher-button:hover {
+    cursor: pointer;
+}
+
+.searcher input {
+    transition: all 1s ease-in-out;
+    border: 0;
+}
+
+.searcher input:active,
+input:focus {
+    border: 0;
+    outline: none;
+}

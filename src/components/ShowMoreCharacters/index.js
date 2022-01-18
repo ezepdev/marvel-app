@@ -8,14 +8,14 @@ let ShowMoreCharacters = ({ dispatch, isLoading }) => {
         dispatch(getCharacters())
     }
 
-    return isLoading ? (
-        'Cargando'
-    ) : (
-        <button className="show-more-characters-btn" onClick={handleClick}>
-            <span className="material-icons material-icons-outlined arrow-down">
-                keyboard_arrow_down
-            </span>
-        </button>
+    return (
+        !isLoading && (
+            <button className="show-more-characters-btn" onClick={handleClick}>
+                <span className="material-icons material-icons-outlined arrow-down">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        )
     )
 }
 
