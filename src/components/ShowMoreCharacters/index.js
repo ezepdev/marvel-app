@@ -12,7 +12,9 @@ let ShowMoreCharacters = ({ dispatch, isLoading }) => {
         'Cargando'
     ) : (
         <button className="show-more-characters-btn" onClick={handleClick}>
-            Mostrar mas...
+            <span className="material-icons material-icons-outlined arrow-down">
+                keyboard_arrow_down
+            </span>
         </button>
     )
 }

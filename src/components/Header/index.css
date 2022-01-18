@@ -1,12 +1,52 @@
 .header-container {
+    display: flex;
     height: 12vh;
     max-width: 100vw;
-    position: relative;
-    display: flex;
     padding: 10px;
+    position: relative;
     background-color: rgb(46, 46, 45);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-logo {
-    margin-right: auto;
+    width: 20%;
+    height: 100%;
+}
+
+.header-logo-img {
+    width: 100%;
+    height: 100%;
+}
+
+.searcher {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    height: 70%;
+}
+
+.searcher-button {
+    background: none;
+    height: 100%;
+    border: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    color: white;
+    overflow: none;
+}
+
+.searcher-button:hover {
+    cursor: pointer;
+}
+
+.searcher input {
+    transition: all 1s ease-in-out;
+    border: 0;
+}
+
+.searcher input:active,
+input:focus {
+    border: 0;
+    outline: none;
 }

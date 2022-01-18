@@ -1,5 +1,4 @@
 .show-more-characters-btn {
-    width: 30vw;
     background: none;
     cursor: pointer;
     background-color: rgb(232, 93, 93, 0.8);
@@ -7,8 +6,7 @@
     border: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    padding: 0 1em;
-    border-radius: 0.5em;
+    border-radius: 2rem;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
         0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
@@ -27,11 +25,24 @@
         0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     background-color: rgb(240, 41, 41);
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
 
 .show-more-characters-btn:active {
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
         0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
     background-color: rgb(250, 31, 31);
+}
+
+.show-more-characters-btn:hover > .arrow-down {
+    animation-duration: 0.7s;
+    animation-name: bottomArrow;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes bottomArrow {
+    to {
+        margin-top: 10px;
+    }
 }
