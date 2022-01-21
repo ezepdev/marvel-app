@@ -1,8 +1,9 @@
 .searcher {
-    margin: 0;
-    text-align: center;
     display: flex;
     height: 70%;
+    margin: 0;
+    border: 0;
+    text-align: center;
 }
 
 .searcher-button {
@@ -15,12 +16,27 @@
     overflow: none;
 }
 
+.searcher-submit-button {
+    background-color: white;
+    border: 0;
+    color: hsla(360, 100%, 80%, 1);
+}
+
+.searcher-submit-button:hover {
+    cursor: pointer;
+}
+
+.searcher-submit-button:hover > span {
+    font-weight: 800;
+    color: rgb(247, 73, 73);
+}
+
 .searcher-button:hover {
     cursor: pointer;
 }
 
 .searcher input {
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
     border: 0;
 }
 

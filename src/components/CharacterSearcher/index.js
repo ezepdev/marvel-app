@@ -42,13 +42,20 @@ let CharacterSearcher = ({ dispatch }) => {
                     onClick={e => setShowInput(state => !state)}
                     className="searcher-button material-icons material-icons-outlined"
                 >
-                    search
+                    {!showInput ? 'search' : 'navigate_next'}
                 </button>
                 <input
                     style={showInput ? showStyles : hiddenStyles}
                     onChange={handleChange}
                 />
-                <button type="submit">Buscar</button>
+                {showInput && (
+                    <button
+                        className="searcher-submit-button material-icons material-icons-outlined"
+                        type="submit"
+                    >
+                        <span>search </span>
+                    </button>
+                )}
             </div>
         </form>
     )

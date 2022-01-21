@@ -5,12 +5,11 @@ import './index.css'
 const CharactersList = ({ characters, isLoading }) => {
     return (
         <>
-            {isLoading ? (
-                'Cargando'
-            ) : (
+            {
                 <ul className="characters-container">
                     {characters.map(({ id, name, description, thumbnail }) => (
-                        <li key={id}>
+                 
+                 <li key={id}>
                             <CharacterCard
                                 name={name}
                                 description={description}
@@ -21,7 +20,7 @@ const CharactersList = ({ characters, isLoading }) => {
                         </li>
                     ))}
                 </ul>
-            )}
+            }
         </>
     )
 }

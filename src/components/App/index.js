@@ -1,4 +1,4 @@
-import './App.css'
+import './index.css'
 import { Provider } from 'react-redux'
 import Home from 'pages/Home'
 import Header from 'components/Header'
