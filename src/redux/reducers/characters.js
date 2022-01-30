@@ -1,6 +1,6 @@
 const fetchCharacterReducer = (
     state = {
-        characters: [],
+        data: [],
         offset: 0,
         status: 'loading',
     },
@@ -10,32 +10,32 @@ const fetchCharacterReducer = (
         case 'START_FETCH':
             return {
                 ...state,
-                characters: charactersReducer(state.characters, action),
+                data: charactersReducer(state.data, action),
                 status: 'loading',
             }
         case 'SUCCESS_FETCH_CHARACTERS':
             return {
                 ...state,
                 offset: state.offset + 50,
-                characters: charactersReducer(state.characters, action),
+                data: charactersReducer(state.data, action),
                 status: 'success',
             }
         case 'SUCCESS_FIND_CHARACTERS':
             return {
                 ...state,
                 offset: 0,
-                characters: charactersReducer(state.characters, action),
+                data: charactersReducer(state.data, action),
                 status: 'success',
             }
         case 'ERROR_FETCH':
             return {
                 ...state,
-                characters: charactersReducer(state.characters, action),
+                data: charactersReducer(state.data, action),
                 status: 'error',
                 error: action.error,
             }
         default:
-            break
+            return state
     }
 }
 
@@ -50,7 +50,7 @@ const charactersReducer = (state = [], action) => {
         case 'ERROR_FETCH':
             return state
         default:
-            break
+            return state
     }
 }
 

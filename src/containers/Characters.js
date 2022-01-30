@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 import CharactersList from 'components/CharactersList'
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ characters }) => {
     return {
-        characters: state.characters,
-        isLoading: state.status == 'loading',
+        characters: characters.data,
+        isLoading: characters.status === 'loading',
     }
 }
 

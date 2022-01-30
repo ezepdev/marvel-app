@@ -29,8 +29,9 @@ const successFindCharacters = characters => {
 
 const getCharacters = () => {
     return (dispatch, getState) => {
+        console.log(getState())
         dispatch(startFetch())
-        const { offset } = getState()
+        const { offset } = getState().characters
         return getCharactersMoreImportants(offset)
             .then(res => dispatch(successFetchCharacters(res)))
             .catch(err => dispatch(failFetch(err)))

@@ -1,14 +1,12 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router'
-import { connect } from 'react-redux'
-import { findCharacterByName } from 'redux/actions/character'
+import { connect, batch } from 'react-redux'
+import { push } from 'connected-react-router'
 import './index.css'
 
-let CharacterSearcher = ({ dispatch }) => {
+let CharacterSearcher = props => {
+    const { dispatch } = props
     const [showInput, setShowInput] = useState(false)
     const [value, setValue] = useState('')
-    const navigate = useNavigate()
-    console.log(navigate)
 
     const handleChange = e => {
         const { value } = e.target
@@ -17,8 +15,7 @@ let CharacterSearcher = ({ dispatch }) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        dispatch(findCharacterByName(value))
-        if (value !== '') navigate(`/search/${value}`)
+        if (value !== '') dispatch(push(`/search`, { key: `${value}` }))
     }
 
     const showStyles = {

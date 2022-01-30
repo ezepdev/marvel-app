@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getCharacters } from 'redux/actions/character'
+import { getCharacters } from 'redux/actions/characters'
 import './index.css'
 
 let ShowMoreCharacters = ({ dispatch, isLoading }) => {
@@ -8,19 +8,19 @@ let ShowMoreCharacters = ({ dispatch, isLoading }) => {
         dispatch(getCharacters())
     }
 
-    return (
-        !isLoading && (
-            <button className="show-more-characters-btn" onClick={handleClick}>
-                <span className="material-icons material-icons-outlined arrow-down">
-                    keyboard_arrow_down
-                </span>
-            </button>
-        )
+    return isLoading ? (
+        'Cargando'
+    ) : (
+        <button className="show-more-characters-btn" onClick={handleClick}>
+            <span className="material-icons material-icons-outlined arrow-down">
+                keyboard_arrow_down
+            </span>
+        </button>
     )
 }
 
-const mapStateToProps = state => ({
-    isLoading: state.status == 'loading',
+const mapStateToProps = ({ characters, router }) => ({
+    isLoading: characters.status == 'loading',
 })
 
 ShowMoreCharacters = connect(mapStateToProps)(ShowMoreCharacters)

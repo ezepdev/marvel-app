@@ -1,27 +1,31 @@
 import './index.css'
-import { Provider } from 'react-redux'
 import Home from 'pages/Home'
 import Header from 'components/Header'
 import SearchResult from 'pages/SearchResult'
-import store from 'redux/store'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
+import { Provider } from 'react-redux'
+import configureStore, { history } from 'redux/store/configureStore'
+import { Route } from 'react-router-dom'
+import { ConnectedRouter } from 'connected-react-router'
 function App() {
+    const store = configureStore()
     return (
-        <Provider store={store}>
-            <Router>
-                <Header />
-                <div className="app-container">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route
-                            path="/search/:keyword"
-                            element={<SearchResult />}
-                        />
-                    </Routes>
-                </div>
-            </Router>
-        </Provider>
+        <>
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <>
+                        <Header />
+                        <div className="app-container">
+                            <Route exact path="/">
+                                <Home />
+                            </Route>
+                            <Route path="/search">
+                                <SearchResult />
+                            </Route>
+                        </div>
+                    </>
+                </ConnectedRouter>
+            </Provider>
+        </>
     )
 }
 
