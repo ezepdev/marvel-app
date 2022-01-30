@@ -1,6 +1,6 @@
 import './index.css'
 import image from '../../images/marvel-image.png'
-import CharacterSearcher from 'components/CharacterSearcher'
+import CharacterSearcher from 'containers/CharacterSearcher'
 
 let Header = () => {
     return (
@@ -8,7 +8,6 @@ let Header = () => {
             <a className="header-logo" href="/">
                 <img className="header-logo-img" src={image} />
             </a>
-
             <CharacterSearcher />
         </header>
     )

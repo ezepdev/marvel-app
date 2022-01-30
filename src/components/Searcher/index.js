@@ -1,10 +1,20 @@
 import { useState } from 'react'
-import { connect, batch } from 'react-redux'
-import { push } from 'connected-react-router'
 import './index.css'
 
-let CharacterSearcher = props => {
-    const { dispatch } = props
+const showStyles = {
+    width: '200px',
+    maxHeight: '100px',
+    padding: '10px',
+    border: 0,
+}
+
+const hiddenStyles = {
+    border: 0,
+    padding: 0,
+    width: 0,
+}
+
+const Searcher = ({ onSubmit }) => {
     const [showInput, setShowInput] = useState(false)
     const [value, setValue] = useState('')
 
@@ -15,20 +25,7 @@ let CharacterSearcher = props => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        if (value !== '') dispatch(push(`/search`, { key: `${value}` }))
-    }
-
-    const showStyles = {
-        width: '200px',
-        maxHeight: '100px',
-        padding: '10px',
-        border: 0,
-    }
-
-    const hiddenStyles = {
-        border: 0,
-        padding: 0,
-        width: 0,
+        onSubmit(value)
     }
 
     return (
@@ -36,7 +33,7 @@ let CharacterSearcher = props => {
             <div className="searcher">
                 <button
                     type="button"
-                    onClick={e => setShowInput(state => !state)}
+                    onClick={() => setShowInput(state => !state)}
                     className="searcher-button material-icons material-icons-outlined"
                 >
                     {!showInput ? 'search' : 'navigate_next'}
@@ -58,6 +55,4 @@ let CharacterSearcher = props => {
     )
 }
 
-CharacterSearcher = connect()(CharacterSearcher)
-
-export default CharacterSearcher
+export default Searcher
