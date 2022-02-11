@@ -1,8 +1,8 @@
 <div align="center">
 
- ### Marvel App
+ ## MarvelApp   
   
-  ***An application for learn a little more about our heroes ***
+  ***An application for learn a little more about our heroes***
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -10,6 +10,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#demo">Demo</a></li>
     <li>
       <a href="#about-the-project">About The Project</a>
       <a href="#getting-started">Getting Started</a>
@@ -20,8 +21,12 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+   
   </ol>
 </details>
+
+## [Demo](https://immense-sea-47734.herokuapp.com/)
+
 
 ## About The Project
 
