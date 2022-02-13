@@ -19,8 +19,8 @@ let ShowMoreCharacters = ({ dispatch, isLoading }) => {
     )
 }
 
-const mapStateToProps = ({ characters, router }) => ({
-    isLoading: characters.status == 'loading',
+const mapStateToProps = ({ characters }) => ({
+    isLoading: characters.status === 'loading',
 })
 
 ShowMoreCharacters = connect(mapStateToProps)(ShowMoreCharacters)

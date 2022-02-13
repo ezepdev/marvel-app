@@ -6,7 +6,8 @@ import { connect } from 'react-redux'
 let SearchResult = ({ params, onSearch }) => {
     useEffect(() => {
         onSearch(params)
-    }, [params])
+        console.log(params);
+    }, [params, onSearch])
 
     return <Characters />
 }

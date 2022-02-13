@@ -18,6 +18,8 @@ const Searcher = ({ onSubmit }) => {
     const [showInput, setShowInput] = useState(false)
     const [value, setValue] = useState('')
 
+    const handleClick = (e) => { setShowInput(state => !state); }
+
     const handleChange = e => {
         const { value } = e.target
         setValue(value)
@@ -29,28 +31,26 @@ const Searcher = ({ onSubmit }) => {
     }
 
     return (
-        <form className="searcher" onSubmit={handleSubmit}>
-            <div className="searcher">
+        <form className="searcher" onSubmit={handleSubmit} >
+            <button
+                type="button"
+                className="searcher-button material-icons material-icons-outlined"
+                onClick={handleClick}
+            >
+                {!showInput ? 'search' : 'navigate_next'}
+            </button>
+            <input
+                style={showInput ? showStyles : hiddenStyles}
+                onChange={handleChange}
+            />
+            {showInput && (
                 <button
-                    type="button"
-                    onClick={() => setShowInput(state => !state)}
-                    className="searcher-button material-icons material-icons-outlined"
+                    className="searcher-submit-button material-icons material-icons-outlined"
+                    type="submit"
                 >
-                    {!showInput ? 'search' : 'navigate_next'}
+                    <span>search</span>
                 </button>
-                <input
-                    style={showInput ? showStyles : hiddenStyles}
-                    onChange={handleChange}
-                />
-                {showInput && (
-                    <button
-                        className="searcher-submit-button material-icons material-icons-outlined"
-                        type="submit"
-                    >
-                        <span>search </span>
-                    </button>
-                )}
-            </div>
+            )}
         </form>
     )
 }

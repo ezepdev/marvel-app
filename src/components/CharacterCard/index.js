@@ -24,7 +24,7 @@ const CharacterCard = ({ name, description, imageSrc }) => {
                 setHover(false)
             }}
         >
-            <img className="card-image" src={imageSrc} />
+            <img className="card-image" alt="character" src={imageSrc} />
             {hover && <CardLegend name={name} description={description} />}
         </div>
     )
