@@ -2,24 +2,22 @@
 
  ## MarvelApp   
   
-  ***An application for learn a little more about our heroes***
+  *** Una aplicacion de los personajes de marvel ***
 </div>
 
-<!-- TABLE OF CONTENTS -->
+<!-- CONTENIDO PRINCIPAL-->
 
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Contenido</summary>
   <ol>
     <li><a href="#demo">Demo</a></li>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#about-the-project">Sobre el proyecto</a>
+      <a href="#getting-started">Comenzando...</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Construido con </a></li>
       </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
    
   </ol>
@@ -28,14 +26,17 @@
 ## [Demo](https://immense-sea-47734.herokuapp.com/)
 
 
-## About The Project
+## Sobre el proyecto
 
-Marvel app is a simple application to known more about the marvel characters. It was made using the framework react.
+Marvel app es una aplicacion en donde podremos encontrar una breve descripcion de varios personajes de los comics de marvel. 
+La aplicacion fue construida usando la libreria de React JS y en este caso se utilizo Redux para gestionar el estado de la aplicacion. 
 
-## Getting Started
 
+## Comenzemos 
 
-First enter at the root folder of the project and install the dependencies:
+Primero descarga la aplicacion con la consola con el comando `git clone https://github.com/ezepdev/marvel-app` o descargalo directamente de github:
+
+luego ejecuta:
 
 ```sh
 $ npm install
@@ -43,7 +44,7 @@ $ npm install
 $ yarn
 ```
 
-Run with npm or yarn in dev mode:
+Ejecuta en modo desarrollo la aplicacion con el comando: 
 
 ```sh
 $ npm run dev
@@ -51,17 +52,18 @@ $ npm run dev
 $ yarn dev
 ```
 
-### Built With
+### Construido con:
 
 - JavaScript
 - [React](https://reactjs.org/)
+- [Redux](https://es.redux.js.org/)
 
 
-## License
+## Licencia 
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-## Contact 📭
+## Contacto 📭
 
 
 [@ezepdev](https://www.linkedin.com/in/ezepdev/) - edjpinheiro@gmail.com
